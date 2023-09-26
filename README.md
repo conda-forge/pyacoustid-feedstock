@@ -1,11 +1,11 @@
-About pyacoustid
-================
+About pyacoustid-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyacoustid-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/sampsyo/pyacoustid
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyacoustid-feedstock/blob/main/LICENSE.txt)
 
 Summary: bindings for Chromaprint acoustic fingerprinting and the Acoustid API
 
