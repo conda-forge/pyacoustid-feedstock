@@ -6,20 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyacoustid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyacoustid-{{ version }}.tar.gz
   sha256: 5f4f487191c19ebb908270b1b7b5297f132da332b1568b96a914574c079ed177
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python =>3.3
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python =>3.3
+    - python >={{ python_min }}
     - audioread
     - requests
 
@@ -30,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/sampsyo/pyacoustid
